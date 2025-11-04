@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History Pemesanan</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="header">
+  <button class="btn-back" onclick="window.location.href='dashboard.html'">← Kembali</button>
+</header>
+
+
+<div class="page-container">
+  <h2 class="page-title">Riwayat Pemesanan</h2>
+
+  <table class="table" id="tabelHistory">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Total</th>
+        <th>Tanggal</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <button class="btn" style="margin-top:15px;background:#d9534f;width:100%;"
+    onclick="hapusHistory()">Hapus Semua History</button>
+</div>
+
+<!-- Modal Detail -->
+<dialog id="modalDetail">
+  <h3>Detail Pesanan</h3>
+  <div id="detailContent"></div>
+  <button onclick="modalDetail.close()">Tutup</button>
+</dialog>
+
+<script src="js/history.js"></script>
+</body>
+</html>

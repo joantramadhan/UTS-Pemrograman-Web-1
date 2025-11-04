@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tracking Pengiriman</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<header class="header">
+  <button class="btn-back" onclick="window.location.href='dashboard.html'">← Kembali</button>
+</header>
+
+<div class="page-container">
+  
+  <h2 class="page-title">Tracking Pengiriman</h2>
+
+  <label for="noDo" style="font-weight: 600; margin-bottom: 6px; display: block;">
+    Masukkan Nomor Delivery Order
+  </label>
+  
+  <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+    <input id="noDo" placeholder="misal: 20230012" style="flex-grow: 1; margin-top: 0;" />
+    
+    <button class="btn" onclick="cekTracking()" style="width: auto; margin-top: 0;">
+      Cari
+    </button>
+  </div>
+
+  <div id="result" style="margin-top:20px; display:none;">
+    <h3 style="color: var(--primary);">Detail Pengiriman</h3>
+    <p><b>Nama:</b> <span id="nama"></span></p>
+    <p><b>Status:</b> <span id="statusText"></span></p>
+
+    <div class="progress-container">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <p style="margin-top: 15px;"><b>Ekspedisi:</b> <span id="ekspedisi"></span></p>
+    <p><b>Tanggal Kirim:</b> <span id="tanggal"></span></p>
+    <p><b>Paket:</b> <span id="paket"></span></p>
+    <p><b>Total:</b> <span id="total"></span></p>
+
+    <h4 style="color: var(--primary); margin-top: 25px;">Riwayat Perjalanan</h4>
+    <ul id="riwayat"></ul>
+  </div>
+
+</div> <script src="js/data.js"></script>
+<script src="js/tracking.js"></script>
+
+</body>
+</html>

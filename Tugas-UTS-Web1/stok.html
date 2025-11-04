@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok Buku</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <button class="btn-back" onclick="history.back()">← Kembali</button>
+</header>
+
+<div class="page-container">
+  <h2 class="page-title">Katalog Buku</h2>
+
+<main style="padding: 15px;">
+
+  <div class="table-wrapper">
+    <table class="table" id="tabelStok">
+    <button class="btn" onclick="document.getElementById('modalTambah').showModal()">+ Tambah Buku</button>
+
+    <table class="table" id="tabelBuku">
+        <thead>
+            <tr>
+                <th>Kode</th>
+                <th>Nama Buku</th>
+                <th>Jenis</th>
+                <th>Edisi</th>
+                <th>Stok</th>
+                <th>Harga</th>
+                <th>Cover</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+  <div class="table-wrapper">
+    <table class="table" id="tabelStok">
+</main>
+
+<!-- Modal Tambah Buku -->
+<dialog id="modalTambah">
+    <h3>Tambah Buku Baru</h3>
+    
+    <label>Kode Barang</label>
+    <input id="kodeInput">
+
+    <label>Nama Barang</label>
+    <input id="namaInput">
+
+    <label>Jenis Barang</label>
+    <input id="jenisInput">
+
+    <label>Edisi</label>
+    <input id="edisiInput" type="number">
+
+    <label>Stok</label>
+    <input id="stokInput" type="number">
+
+    <label>Harga</label>
+    <input id="hargaInput">
+
+    <label>Link Cover (img/...)</label>
+    <input id="coverInput">
+
+    <div class="modal-actions">
+        <button onclick="tambahBuku()">Simpan</button>
+        <button onclick="modalTambah.close()">Batal</button>
+    </div>
+</dialog>
+
+<script src="js/data.js"></script>
+<script src="js/stok.js"></script>
+
+</body>
+</html>

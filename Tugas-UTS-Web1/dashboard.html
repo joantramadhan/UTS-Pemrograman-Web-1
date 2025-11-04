@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Toko Buku</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top-bar">
+  <button id="logoutBtn" class="btn-logout">Logout</button>
+</header>
+
+
+<!-- Greeting -->
+<div class="greeting-box" id="greetBox"></div>
+
+<!-- Menu -->
+<main class="menu-wrapper">
+  <div class="menu-grid">
+
+    <div class="menu-btn" onclick="goTo('stok.html')">
+      <img src="img/katalog.png" class="menu-icon">
+      <p>katalog</p>
+    </div>
+
+    <div class="menu-btn" onclick="goTo('checkout.html')">
+      <img src="img/buy.png" class="menu-icon">
+      <p>pemesanan</p>
+    </div>
+
+    <div class="menu-btn" onclick="goTo('history.html')">
+      <img src="img/history.png" class="menu-icon">
+      <p>history</p>
+    </div>
+
+    <div class="menu-btn" onclick="goTo('tracking.html')">
+      <img src="img/tracking.png" class="menu-icon">
+      <p>tracking</p>
+    </div>
+    
+
+  </div>
+</main>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

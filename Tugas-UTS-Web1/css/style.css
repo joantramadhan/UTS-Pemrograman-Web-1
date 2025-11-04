@@ -1,0 +1,449 @@
+/* css/style.css */
+:root {
+  --primary: #0b63ce;
+  --muted: #666;
+  --bg: #f4f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(180deg, #f3d8c7, #cbd4db);
+  margin: 0;
+  min-height: 100vh;
+  /* Hapus display: flex, align-items, justify-content jika Anda ingin kontrol penuh elemen di dalamnya */
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Card & Dialog styles */
+.card {
+  background: #fff;
+}
+
+.card,
+dialog {
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  animation: fadeIn .4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+dialog {
+  border: none;
+  width: 320px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.login-card h1 {
+  margin-top: 0;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Button styles */
+.btn,
+.btn-logout {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn {
+  margin-top: 18px;
+  width: 100%;
+  background: #0b63ce;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: scale(1.03);
+}
+
+.btn-logout {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-logout:hover {
+  opacity: .9;
+  transform: scale(1.03);
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 6px 0;
+}
+
+/* Header fixed */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  z-index: 9999;
+  background: transparent;
+  /* jangan ganggu layout */
+}
+
+/* Menu Container */
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.menu-card {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table th {
+  background: #0b63ce;
+  color: white;
+  font-weight: 600;
+}
+
+.table tr:hover {
+  background: #f5faff;
+}
+
+.table img {
+  width: 60px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  padding: 5px;
+}
+
+/* Progress bar */
+.progress-container {
+  width: 100%;
+  background: #eee;
+  border-radius: 6px;
+  margin: 10px 0 14px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #0b63ce;
+  transition: 1s;
+}
+
+/* History list */
+#riwayat li {
+  margin-bottom: 6px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  border-left: 4px solid #0b63ce;
+  list-style: none;
+}
+
+/* Form focus */
+textarea:focus,
+select:focus,
+input:focus {
+  border-color: #0b63ce;
+  outline: none;
+}
+
+/* Greeting bubble */
+.greeting-box {
+  background: #2d676b;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  width: fit-content;
+  text-transform: capitalize;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+  /* Positioning overrides: */
+  margin-top: 50px !important;
+  margin-bottom: 100px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Grid menu */
+.menu-wrapper {
+  text-align: center; /* Untuk memusatkan teks/inline-block di dalamnya, tapi flexbox akan diatur sendiri */
+  padding: 20px;
+  margin-top: 30px;
+  width: 100%; /* Pastikan ini memenuhi lebar yang tersedia */
+  max-width: 700px; /* Batasi lebar maksimum agar bisa di-tengah-kan */
+  margin-left: auto; /* Pusatkan secara horizontal */
+  margin-right: auto; /* Pusatkan secara horizontal */
+  /* Pastikan tidak ada properti 'position' atau 'left' yang aktif di sini jika bukan fixed/absolute */
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Ini seharusnya sekarang berfungsi dengan baik */
+  align-items: center; /* Untuk memusatkan vertikal jika ada perbedaan tinggi */
+  gap: 20px 25px;
+  padding: 0; /* Ubah ini jadi 0 atau nilai kecil jika perlu, padding 150px terlalu besar */
+  margin: 0 auto; /* Ini akan memusatkan grid itu sendiri jika lebarnya terbatas */
+}
+
+.menu-btn {
+  width: 120px;
+  height: 120px;
+  background: #f7f1ed;
+  border-radius: 24px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow:
+    5px 5px 12px rgba(0, 0, 0, 0.1),
+    -5px -5px 12px rgba(255, 255, 255, 0.7);
+}
+
+.menu-btn:hover {
+  transform: translateY(-5px) scale(1.04);
+  box-shadow:
+    7px 7px 20px rgba(0, 0, 0, 0.15),
+    -7px -7px 20px rgba(255, 255, 255, 0.8);
+}
+
+.menu-btn p {
+  margin-top: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .3px;
+}
+
+.menu-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* ==== DASHBOARD POSITIONING FIX ==== */
+/* posisin logout di atas kiri */
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* Tombol Back global posisi kiri atas */
+.btn-back {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  background: #0b63ce;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  z-index: 1110;
+  /* supaya selalu muncul di atas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: .2s;
+}
+
+.btn-back:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Checkout Page */
+.checkout-container {
+  max-width: 480px;
+  background: #ffffff;
+  margin: 90px auto 30px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  animation: fadeIn .3s ease-in-out;
+}
+
+.title-checkout {
+  text-align: center;
+  color: #0b63ce;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Form */
+.checkout-container label {
+  font-weight: 600;
+  display: block;
+  margin-top: 10px;
+}
+
+.checkout-container textarea,
+.checkout-container input,
+.checkout-container select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Qty kecil */
+.qty-input {
+  width: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* tombol konfirmasi */
+.checkout-btn {
+  width: 100%;
+  background: #0b63ce;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.checkout-btn:hover {
+  opacity: .9;
+  transform: scale(1.03);
+}
+
+
+/* === GLOBAL PAGE CARD STYLE === */
+.page-container {
+  max-width: 900px;
+  /* dari 480px */
+  background: #ffffff;
+  margin: 90px auto 25px;
+  padding: 28px;
+  /* padding juga dibesarin biar proporsional */
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  animation: fadeIn .3s ease-in-out;
+}
+
+.page-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: #0b63ce;
+  margin-bottom: 12px;
+}
+/* Tambahkan ini di bagian bawah style.css */
+
+.login-page {
+  /* Properti ini sekarang HANYA berlaku untuk 
+    body yang memiliki class "login-page".
+    Halaman dashboard Anda tidak akan terpengaruh.
+  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

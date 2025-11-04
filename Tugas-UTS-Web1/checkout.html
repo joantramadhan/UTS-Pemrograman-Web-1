@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pemesanan Buku</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<main class="checkout-container">
+
+  <h2 class="title-checkout">Pemesanan Buku</h2>
+
+  <h3>Data Pemesan</h3>
+
+  <label>Nama Pemesan</label>
+  <input id="namaPemesan">
+
+  <label>Email</label>
+  <input id="emailPemesan" type="email">
+
+  <label>Alamat</label>
+  <textarea id="alamatPemesan" rows="2"></textarea>
+
+  <label>Metode Pembayaran</label>
+  <select id="bayarPemesan">
+    <option>Transfer Bank</option>
+    <option>Virtual Account</option>
+    <option>COD</option>
+    <option>E-Wallet (Dana/Gopay/OVO/QRIS)</option>
+  </select>
+
+  <hr style="margin:18px 0">
+
+  <h3>Pilih Buku</h3>
+  <select id="pilihBuku"></select>
+  <input id="qtyBuku" type="number" value="1" min="1" class="qty-input">
+  <button class="btn" onclick="tambahItem()">Tambah</button>
+
+  <table class="table" id="tabelPesanan" style="margin-top:15px;">
+    <thead>
+      <tr>
+        <th>Buku</th>
+        <th>Qty</th>
+        <th>Subtotal</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h3>Total: <span id="totalHarga">Rp 0</span></h3>
+
+  <button class="checkout-btn" onclick="konfirmasiPesanan()">Konfirmasi Pesanan</button>
+
+</main>
+
+<button class="btn-back" onclick="history.back()">← Kembali</button>
+
+
+<script src="js/data.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

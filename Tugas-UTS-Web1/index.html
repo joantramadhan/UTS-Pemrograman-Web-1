@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login - Toko Buku</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page"> <main class="container">
+  
+  <main class="container">
+    <section class="card login-card" aria-labelledby="loginTitle">
+      <h1 id="loginTitle">Masuk ke Toko Buku</h1>
+
+      <form id="loginForm" onsubmit="event.preventDefault(); doLogin();">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="email@contoh.com" required>
+
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="password" required>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+
+      <div class="links">
+        <button id="btnForgot" class="link-btn">Lupa Password?</button>
+        <button id="btnRegister" class="link-btn">Daftar</button>
+        
+      </div>
+
+      <div id="message" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Modal Lupa Password -->
+ <dialog id="modalForgot">
+    <h2>Lupa Password</h2>
+    <p>Masukkan email untuk menerima instruksi reset (simulasi).</p>
+    <input id="forgotEmail" type="email" placeholder="email@contoh.com">
+    <div class="modal-actions">
+      <button id="sendReset" class="btn">Kirim</button>
+      <button id="closeForgot" class="btn-light">Tutup</button>
+    </div>
+  </dialog>
+
+  <dialog id="modalRegister">
+    <h2>Daftar Akun</h2>
+    <form id="registerForm" onsubmit="event.preventDefault(); doRegister();">
+      <label for="regNama">Nama</label>
+      <input id="regNama" required>
+      <label for="regEmail">Email</label>
+      <input id="regEmail" type="email" required>
+      <label for="regPassword">Password</label>
+      <input id="regPassword" type="password" required>
+      <div class="modal-actions">
+        <button type="submit" class="btn">Daftar</button>
+        <button type="button" id="closeRegister" class="btn-light">Batal</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/data.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
